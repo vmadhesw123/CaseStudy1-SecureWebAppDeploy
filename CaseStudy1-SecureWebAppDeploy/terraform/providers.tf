@@ -3,15 +3,15 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "rg" {
-  name     = "hello-world-rg"
+  name     = "hello-eComSite-rg"
   location = "East US"
 }
 
 resource "azurerm_kubernetes_cluster" "aks" {
-  name                = "hello-world-aks"
+  name                = "hello-eComSite-aks"
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
-  dns_prefix          = "hello-world-aks"
+  dns_prefix          = "hello-eComSite-aks"
 
   default_node_pool {
     name       = "default"
